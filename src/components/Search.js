@@ -5,7 +5,11 @@ const Search = () => {
   const [term, setTerm] = useState('');
 
   useEffect(() => {
-    console.log(term);
+    const search = async () => {
+      await axios.get('asdga');
+    };
+
+    search();
   }, [term]);
 
   return (
