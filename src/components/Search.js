@@ -22,7 +22,9 @@ const Search = () => {
       setResults(data);
     };
 
-    search();
+    if (term) {
+      search();      
+    }
   }, [term]);
 
   return (
