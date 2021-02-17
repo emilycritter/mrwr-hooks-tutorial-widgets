@@ -20,8 +20,14 @@ const Search = () => {
       setResults(data.query.search);
     };
 
-    if (term) {
-      search();
+    const timeoutId = setTimeout(() => {
+      if (term) {
+        search();
+      }
+    }, 500);
+
+    return () => { // This function runs before the component is re-rendered
+      clearTimeout(timeoutId); // Cancel the previous timeout
     }
   }, [term]);
 
