@@ -5,10 +5,10 @@ const Search = () => {
   const [term, setTerm] = useState('');
 
   useEffect(() => {
-    (async () => {
-      await axios.get('asdga');
-    })();
-
+    axios.get('kadga')
+      .then((response) => {
+        console.log(response.data);
+      });
   }, [term]);
 
   return (
