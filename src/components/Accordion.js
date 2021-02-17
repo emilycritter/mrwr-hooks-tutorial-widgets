@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Accordion = ({ items }) => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null); // syntax for array destructuring, where null is the default value for activeIndex
 
   const onTitleClick = (index) => {
     setActiveIndex(index);
