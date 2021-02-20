@@ -6,7 +6,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 
   useEffect(() => {
     document.body.addEventListener('click', (event) => {
-      if (ref.current && ref.current.contains(event.target)) {
+      if (ref.current && ref.current.contains(event.target)) { // Don't run setOpen(false) if the element we've clicked on is part of the Dropdown component
         return;
       }
       setOpen(false);
