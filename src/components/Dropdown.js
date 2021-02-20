@@ -5,12 +5,18 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
   const ref = useRef();
 
   useEffect(() => {
-    document.body.addEventListener('click', (event) => {
+    const onBodyClick = (event) => {
       if (ref.current && ref.current.contains(event.target)) { // Don't run setOpen(false) if the element we've clicked on is part of the Dropdown component
         return;
       }
       setOpen(false);
-    });
+    };
+
+    document.body.addEventListener('click', onBodyClick);
+
+    return () => { // useEffect cleanup function
+      document.body.removeEventListener('click', onBodyClick);      
+    };
   }, []); // This function should only run once (not at every rerender)
 
   const renderedOptions = options.map((option) => {
