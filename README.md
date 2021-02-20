@@ -13,3 +13,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Topics
 * React Hooks (useState, useEffect, useRef)
 * Navigation from scratch (i.e. not using tools like React Router)
+
+## Deployment with Netlify  
+https://mrwr-hooks-tutorial-widget.netlify.app/
