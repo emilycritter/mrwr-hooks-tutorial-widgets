@@ -8,3 +8,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Local Development
 * To start the app, run `npm start`
+
+
+## Topics
+* React Hooks (useState, useEffect, useRef)
+* Navigation from scratch (i.e. not using tools like React Router)
