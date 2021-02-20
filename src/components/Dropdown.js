@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ label, options, selected, onSelectedChange }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
@@ -15,7 +15,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     document.body.addEventListener('click', onBodyClick);
 
     return () => { // useEffect cleanup function
-      document.body.removeEventListener('click', onBodyClick);      
+      document.body.removeEventListener('click', onBodyClick);
     };
   }, []); // This function should only run once (not at every rerender)
 
@@ -37,7 +37,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
   return (
     <div ref={ref} className="ui form">
       <div className="field">
-        <label className="field">Select a Color</label>
+        <label className="field">{label}</label>
         <div onClick={() => setOpen(!open)} className={`ui selection dropdown ${open ? 'visible active' : ''}`}>
           <i className="dropdown icon"></i>
           <div className="text">{selected.label}</div>

@@ -20,10 +20,11 @@ const Translate = () => {
   return (
     <div>
       <Dropdown
-       selected={language}
-       onSelectedChange={setLanguage}
-       options={options}
-     />
+        label="Select a Language"
+        selected={language}
+        onSelectedChange={setLanguage}
+        options={options}
+      />
     </div>
   );
 };
