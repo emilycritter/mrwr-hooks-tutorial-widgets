@@ -1,6 +1,6 @@
 # Modern React with Redux Tutorial: Widgets App (covering Hooks)
 - [Udemy Course](https://www.udemy.com/course/react-redux/)
-- Course Sections: 12
+- Course Sections: 12 - 13
 
 
 ## Getting Started with Create React App
