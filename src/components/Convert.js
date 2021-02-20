@@ -3,20 +3,24 @@ import axios from 'axios';
 const API_KEY = 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM';
 
 const Convert = ({ language, text }) => {
+  const [translated, setTranslated] = useState('');
   useEffect(() => {
-    axios.post('https://translation.googleapis.com/language/translate/v2', {}, {
-      params: {
-        q: text,
-        target: language.value,
-        key: API_KEY
-      }
-    });
-    console.log(language, text);
+    const doTranslation = async () => {
+      const { data } = await axios.post('https://translation.googleapis.com/language/translate/v2', {}, {
+        params: {
+          q: text,
+          target: language.value,
+          key: API_KEY
+        }
+      });
+      setTranslated(data.data.translations[0].translatedText);
+    };
+
+    doTranslation();
   }, [language, text]); // Run any time we get a new value for language or text
 
   return (
-    <div>
-    </div>
+    <div><h1 className="ui header">{translated}</h1></div>
   );
 };
 
